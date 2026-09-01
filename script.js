@@ -62,19 +62,25 @@ function renderizarProdutos() {
     grid.innerHTML = "";
     
     produtos.forEach((prod) => {
-        grid.innerHTML += `
-            <div class="product-card glow-button">
-                <img src="${prod.imagem}" alt="${prod.nome}">
-                <div>
-                    <h3>${prod.nome}</h3>
-                    <p>${prod.desc}</p>
-                </div>
-                <span class="price">${prod.preco}</span>
-            </div>
+        const card = document.createElement("div");
+        card.className = "product-card glow-button";
+        card.innerHTML = `
+            <img src="${prod.imagem}" alt="${prod.nome}">
+            <h3>${prod.nome}</h3>
+            <p>${prod.desc}</p>
+            <span class="price">${prod.preco}</span>
         `;
+        
+        // Adiciona o redirecionamento direto para o WhatsApp ao clicar no produto
+        card.addEventListener("click", () => {
+            const numeroWhatsApp = "5534997129462";
+            const mensagem = encodeURIComponent(`Olá, Liliane Machado! Tenho interesse no produto: *${prod.nome}*. Poderia me passar mais informações?`);
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagem}`, '_blank');
+        });
+
+        grid.appendChild(card);
     });
 }
-
 renderizarProdutos();
 
 // --- SISTEMA DE SEGURANÇA E BLOQUEIO DE ADMIN ---
