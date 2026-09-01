@@ -3,33 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Profissional</title>
+    <title>Liliane Machado</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <div class="container">
-            <h1>Meu Site</h1>
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
+            <h1 id="tituloNome">liliane machado</h1>
+            <nav class="site-nav">
+                <a href="#inicio">Início</a>
+                <a href="#cadastro">Cadastro</a>
+                <a href="#login">Login</a>
+                <a href="#redes">Redes Sociais</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <h2>Bem-vindo à nossa página estruturada</h2>
-            <p>Construída com HTML, estilizada com CSS e integrada com lógica moderna.</p>
-            <button id="meuBotao">Clique em Mim</button>
+        <section id="inicio" class="hero-section">
+            <div class="container">
+                <h2>Soluções Digitais Profissionais</h2>
+                <p>Criando experiências modernas, rápidas e funcionais para a web.</p>
+                <button id="meuBotao">Fale Comigo</button>
+            </div>
+        </section>
+
+        <section id="cadastro" class="form-section">
+            <div class="container">
+                <h2>Faça seu Cadastro</h2>
+                <form id="formCadastro" class="card-form">
+                    <input type="text" placeholder="Seu Nome Completo" required>
+                    <input type="email" placeholder="Seu E-mail" required>
+                    <input type="password" placeholder="Crie uma Senha" required>
+                    <button type="submit" class="btn-submit">Cadastrar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="login" class="form-section alt-bg">
+            <div class="container">
+                <h2>Área de Login</h2>
+                <form id="formLogin" class="card-form">
+                    <input type="email" placeholder="Seu E-mail" required>
+                    <input type="password" placeholder="Sua Senha" required>
+                    <button type="submit" class="btn-submit">Entrar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="redes" class="social-section">
+            <div class="container">
+                <h2>Conecte-se Conosco</h2>
+                <p>Acesse nossas redes sociais e canais de atendimento:</p>
+                <div class="social-buttons">
+                    <a href="https://facebook.com" target="_blank" class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://whatsapp.com" target="_blank" class="social-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Liliane Machado. Todos os direitos reservados.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 LilianeMachado. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
