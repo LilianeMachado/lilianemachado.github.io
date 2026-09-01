@@ -291,63 +291,36 @@ main {
 }
 
 /* Cosméticos Flutuantes de Fundo Perfeitos */
-.floating-cosmetics-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.floating-item {
-    position: absolute;
-    color: var(--primary-glow);
-    font-size: 1.6rem;
-    opacity: 0.35;
-    animation: floatUpSmooth linear infinite;
-    text-shadow: 0 0 12px var(--primary-glow);
-}
-
+/* Customização de cores individuais para os cosméticos flutuantes */
 .floating-item.lipstick {
     left: 12%;
+    color: #ff4d6d; /* Tom vibrante de batom */
+    text-shadow: 0 0 15px #ff4d6d, 0 0 5px #ff758f;
     animation-duration: 12s;
     animation-delay: 0s;
 }
 
 .floating-item.cream {
     left: 35%;
+    color: #ffd166; /* Tom suave e cremoso sofisticado */
+    text-shadow: 0 0 15px #ffd166, 0 0 5px #ffe8a3;
     animation-duration: 16s;
     animation-delay: 2s;
 }
 
 .floating-item.perfume {
     left: 65%;
+    color: #c77dff; /* Tom elegante de frasco de perfume */
+    text-shadow: 0 0 15px #c77dff, 0 0 5px #e0aaff;
     animation-duration: 13s;
     animation-delay: 1s;
 }
 
 .floating-item.sparkle {
     left: 85%;
+    color: #ffb703; /* Brilho dourado refinado */
+    text-shadow: 0 0 15px #ffb703, 0 0 5px #ffd166;
     animation-duration: 15s;
     animation-delay: 4s;
 }
-
-@keyframes floatUpSmooth {
-    0% {
-        transform: translateY(105vh) rotate(0deg) scale(0.9);
-        opacity: 0;
-    }
-    20% {
-        opacity: 0.4;
-    }
-    80% {
-        opacity: 0.4;
-    }
-    100% {
-        transform: translateY(-10vh) rotate(360deg) scale(1.1);
-        opacity: 0;
-    }
 }
