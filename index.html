@@ -15,8 +15,8 @@
                 <button class="nav-btn" onclick="mostrarSecao('inicio')">Início</button>
                 <button class="nav-btn" onclick="mostrarSecao('produtos')">Ver Produtos</button>
                 <button class="nav-btn" onclick="mostrarSecao('categorias')">Categorias</button>
-                <button class="nav-btn" onclick="mostrarSecao('cadastro')">Cadastro</button>
                 <button class="nav-btn" onclick="mostrarSecao('login')">Login</button>
+                <button class="nav-btn admin-link" onclick="mostrarSecao('admin')"><i class="fas fa-lock"></i> Painel Admin</button>
             </nav>
         </div>
     </header>
@@ -58,29 +58,9 @@
                     <div class="section-title-box">
                         <h2 class="glow-text">Catálogo de Produtos</h2>
                     </div>
-                    <p class="section-subtitle">Confira nossa seleção exclusiva de alta qualidade:</p>
-                    <div class="product-grid">
-                        <div class="product-card glow-button">
-                            <h3>Batom Matte Luxo</h3>
-                            <p>Alta fixação e cores vibrantes.</p>
-                            <span class="price">R$ 49,90</span>
+                    <p class="section-subtitle">Confira nossa seleção exclusiva:</p>
+                    <div id="productGrid" class="product-grid">
                         </div>
-                        <div class="product-card glow-button">
-                            <h3>Sérum Facial Vitamina C</h3>
-                            <p>Ilumina e revitaliza a pele.</p>
-                            <span class="price">R$ 89,90</span>
-                        </div>
-                        <div class="product-card glow-button">
-                            <h3>Perfume Floral Essencial</h3>
-                            <p>Fragrância marcante e duradoura.</p>
-                            <span class="price">R$ 149,90</span>
-                        </div>
-                        <div class="product-card glow-button">
-                            <h3>Máscara Capilar Hidratação Profunda</h3>
-                            <p>Recuperação imediata dos fios.</p>
-                            <span class="price">R$ 65,90</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -93,31 +73,11 @@
                     </div>
                     <p class="section-subtitle">Explore por tipo de produto desejado:</p>
                     <div class="category-buttons">
-                        <button class="category-btn glow-button" onclick="alert('Explorando: Skincare & Cuidados com a Pele')">Skincare</button>
-                        <button class="category-btn glow-button" onclick="alert('Explorando: Maquiagens')">Maquiagem</button>
-                        <button class="category-btn glow-button" onclick="alert('Explorando: Perfumaria')">Perfumaria</button>
-                        <button class="category-btn glow-button" onclick="alert('Explorando: Tratamentos para Cabelos')">Cabelos</button>
-                        <button class="category-btn glow-button" onclick="alert('Explorando: Hidratantes Corporais')">Corpo e Banho</button>
-                        <button class="category-btn glow-button" onclick="alert('Explorando: Unhas e Esmaltes')">Unhas</button>
-                        <button class="category-btn glow-button" onclick="alert('Explorando: Produtos Masculinos')">Linha Masculina</button>
-                        <button class="category-btn glow-button" onclick="alert('Explorando: Proteção Solar')">Protetor Solar</button>
+                        <button class="category-btn glow-button" onclick="alert('Skincare selecionado')">Skincare</button>
+                        <button class="category-btn glow-button" onclick="alert('Maquiagem selecionada')">Maquiagem</button>
+                        <button class="category-btn glow-button" onclick="alert('Perfumaria selecionada')">Perfumaria</button>
+                        <button class="category-btn glow-button" onclick="alert('Cabelos selecionado')">Cabelos</button>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="sec-cadastro" class="pagina-secao">
-            <div class="form-section">
-                <div class="container">
-                    <div class="section-title-box">
-                        <h2 class="glow-text">Faça seu Cadastro</h2>
-                    </div>
-                    <form id="formCadastro" class="card-form">
-                        <input type="text" placeholder="Seu Nome Completo" required>
-                        <input type="email" placeholder="Seu E-mail" required>
-                        <input type="password" placeholder="Crie uma Senha" required>
-                        <button type="submit" class="btn-submit glow-button">Cadastrar</button>
-                    </form>
                 </div>
             </div>
         </section>
@@ -133,6 +93,35 @@
                         <input type="password" placeholder="Sua Senha" required>
                         <button type="submit" class="btn-submit glow-button">Entrar</button>
                     </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-admin" class="pagina-secao">
+            <div class="form-section">
+                <div class="container">
+                    <div class="section-title-box">
+                        <h2 class="glow-text"><i class="fas fa-lock"></i> Acesso Restrito ao Administrador</h2>
+                    </div>
+                    
+                    <div id="adminLoginBox" class="card-form">
+                        <p style="color: #d1b8bc; margin-bottom: 10px;">Digite a senha de administrador para gerenciar o site:</p>
+                        <input type="password" id="adminPasswordInput" placeholder="Senha de Admin" required>
+                        <button type="button" class="btn-submit glow-button" onclick="fazerLoginAdmin()">Entrar no Painel</button>
+                    </div>
+
+                    <div id="adminPanelBox" style="display: none;" class="admin-dashboard">
+                        <h3 style="color: #e2879a; margin-bottom: 20px;">Painel de Controle de Produtos e Preços</h3>
+                        <form id="formAddProduto" class="card-form" style="max-width: 100%;">
+                            <input type="text" id="novoNomeProd" placeholder="Nome do Cosmético" required>
+                            <input type="text" id="novoPrecoProd" placeholder="Valor (Ex: R$ 59,90)" required>
+                            <input type="text" id="novaDescProd" placeholder="Breve Descrição" required>
+                            <label style="text-align: left; color: #d1b8bc; font-size: 0.9rem;">Foto ou ícone do produto (Selecione da galeria):</label>
+                            <input type="file" id="novaFotoProd" accept="image/*" style="padding: 8px;">
+                            <button type="submit" class="btn-submit glow-button">Adicionar / Atualizar Produto</button>
+                        </form>
+                        <button class="nav-btn" style="margin-top: 20px; background-color: #a93226;" onclick="sairAdmin()">Sair do Painel</button>
+                    </div>
                 </div>
             </div>
         </section>
