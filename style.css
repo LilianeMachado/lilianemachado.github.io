@@ -290,8 +290,7 @@ main {
     backdrop-filter: blur(8px);
 }
 
-
-}/* Configuração base dos ícones flutuantes */
+/* Configuração base dos ícones flutuantes */
 .floating-item {
     position: absolute;
     bottom: -50px;
