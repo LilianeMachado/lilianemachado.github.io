@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f111a;
-    color: #ffffff;
+    background-color: #1a1415; /* Tom escuro sofisticado e acolhedor */
+    color: #f7f1f2;
     line-height: 1.6;
 }
 
@@ -17,7 +17,6 @@ body {
     margin: 0 auto;
 }
 
-/* Oculta as seções por padrão, exibindo apenas a ativa */
 .pagina-secao {
     display: none;
 }
@@ -26,26 +25,26 @@ body {
     display: block;
 }
 
-/* Efeito de luz (Glow) */
+/* Efeito de luz (Glow) em tons rosados/quentes elegantes */
 .glow-text {
     color: #ffffff;
-    text-shadow: 0 0 10px rgba(0, 195, 255, 0.8), 0 0 20px rgba(0, 195, 255, 0.5);
+    text-shadow: 0 0 12px rgba(226, 135, 154, 0.8), 0 0 25px rgba(226, 135, 154, 0.4);
 }
 
 .glow-button {
-    box-shadow: 0 0 15px rgba(0, 195, 255, 0.4);
+    box-shadow: 0 0 15px rgba(226, 135, 154, 0.3);
     transition: all 0.3s ease;
 }
 
 .glow-button:hover {
-    box-shadow: 0 0 25px rgba(0, 195, 255, 0.8), 0 0 35px rgba(0, 195, 255, 0.6);
+    box-shadow: 0 0 25px rgba(226, 135, 154, 0.8), 0 0 35px rgba(226, 135, 154, 0.5);
     transform: translateY(-2px);
 }
 
 .site-header {
-    background-color: #16192b;
+    background-color: #241c1e;
     padding: 1.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(226, 135, 154, 0.15);
 }
 
 .header-container {
@@ -63,27 +62,26 @@ body {
 }
 
 .nav-btn {
-    background-color: #1f233a;
-    color: #ffffff;
-    text-decoration: none;
+    background-color: #322629;
+    color: #f7f1f2;
+    border: 1px solid rgba(226, 135, 154, 0.4);
     padding: 10px 20px;
     border-radius: 8px;
     font-weight: 600;
-    border: 1px solid rgba(0, 195, 255, 0.3);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
-    background-color: #00c3ff;
-    color: #0f111a;
-    box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
+    background-color: #e2879a;
+    color: #1a1415;
+    box-shadow: 0 0 15px rgba(226, 135, 154, 0.8);
 }
 
 .hero-section {
-    background: linear-gradient(rgba(15, 17, 26, 0.8), rgba(15, 17, 26, 0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    background: linear-gradient(rgba(26, 20, 21, 0.75), rgba(26, 20, 21, 0.75)), url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
     text-align: center;
-    padding: 120px 20px;
+    padding: 130px 20px;
 }
 
 .hero-section h2 {
@@ -94,12 +92,12 @@ body {
 .hero-section p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #cfd3dc;
+    color: #e6d2d5;
 }
 
-.hero-section button {
-    background-color: #00c3ff;
-    color: #0f111a;
+.btn-cta {
+    background-color: #e2879a;
+    color: #1a1415;
     border: none;
     padding: 14px 35px;
     font-size: 1.1rem;
@@ -111,23 +109,55 @@ body {
 .form-section {
     padding: 90px 0;
     text-align: center;
-    background-color: #121522;
-    margin: 30px auto;
+    background-color: #241c1e;
+    margin: 40px auto;
     max-width: 900px;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(226, 135, 154, 0.1);
 }
 
 .alt-bg {
-    background-color: #16192b;
+    background-color: #1a1415;
 }
 
 .section-title-box {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .section-title-box h2 {
     font-size: 2rem;
+}
+
+.section-subtitle {
+    color: #d1b8bc;
+    margin-bottom: 30px;
+}
+
+/* Botões de Categoria estilizados */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.category-btn {
+    background-color: #322629;
+    color: #f7f1f2;
+    border: 1px solid rgba(226, 135, 154, 0.4);
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    flex: 1 1 180px;
+}
+
+.category-btn:hover {
+    background-color: #e2879a;
+    color: #1a1415;
 }
 
 .card-form {
@@ -137,30 +167,30 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background: #1f233a;
+    background: #322629;
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(226, 135, 154, 0.2);
 }
 
 .card-form input {
     padding: 14px;
-    background: #121522;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #1a1415;
+    border: 1px solid rgba(226, 135, 154, 0.3);
     border-radius: 8px;
     font-size: 1rem;
     color: #ffffff;
 }
 
 .card-form input:focus {
-    border-color: #00c3ff;
+    border-color: #e2879a;
     outline: none;
-    box-shadow: 0 0 8px rgba(0, 195, 255, 0.5);
+    box-shadow: 0 0 8px rgba(226, 135, 154, 0.5);
 }
 
 .btn-submit {
-    background-color: #00c3ff;
-    color: #0f111a;
+    background-color: #e2879a;
+    color: #1a1415;
     border: none;
     padding: 14px;
     font-size: 1.1rem;
@@ -172,11 +202,11 @@ body {
 .social-section {
     padding: 60px 0;
     text-align: center;
-    background-color: #0f111a;
+    background-color: #1a1415;
 }
 
 .social-section p {
-    color: #cfd3dc;
+    color: #d1b8bc;
     margin-bottom: 25px;
 }
 
@@ -203,10 +233,10 @@ body {
 .whatsapp { background-color: #25d366; }
 
 .site-footer {
-    background-color: #16192b;
+    background-color: #241c1e;
     text-align: center;
     padding: 25px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(226, 135, 154, 0.1);
     margin-top: 40px;
 }
 

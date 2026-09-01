@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liliane Machado</title>
+    <title>Liliane Machado | Cosméticos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,10 +12,10 @@
         <div class="container header-container">
             <h1 id="tituloNome" class="glow-text">liliane machado</h1>
             <nav class="site-nav">
-                <a href="#inicio" class="nav-btn" onclick="mostrarSecao('inicio')">Início</a>
-                <a href="#cadastro" class="nav-btn" onclick="mostrarSecao('cadastro')">Cadastro</a>
-                <a href="#login" class="nav-btn" onclick="mostrarSecao('login')">Login</a>
-                <a href="#redes" class="nav-btn" onclick="mostrarSecao('redes')">Redes Sociais</a>
+                <button class="nav-btn" onclick="mostrarSecao('inicio')">Início</button>
+                <button class="nav-btn" onclick="mostrarSecao('categorias')">Categorias</button>
+                <button class="nav-btn" onclick="mostrarSecao('cadastro')">Cadastro</button>
+                <button class="nav-btn" onclick="mostrarSecao('login')">Login</button>
             </nav>
         </div>
     </header>
@@ -24,18 +24,18 @@
         <section id="sec-inicio" class="pagina-secao ativa">
             <div class="hero-section">
                 <div class="container">
-                    <h2 class="glow-text">Criador Léo Kazama</h2>
-                    <p>Criando experiências modernas, rápidas e funcionais para a web.</p>
-                    <button id="meuBotao" class="glow-button" onclick="mostrarSecao('redes')">Fale Comigo</button>
+                    <h2 class="glow-text">Beleza e Cuidado em Cada Detalhe</h2>
+                    <p>Descubra os melhores cosméticos para realçar a sua essência natural.</p>
+                    <button class="glow-button btn-cta" onclick="mostrarSecao('categorias')">Ver Produtos</button>
                 </div>
             </div>
 
             <section class="social-section">
                 <div class="container">
                     <div class="section-title-box">
-                        <h2 class="glow-text">Conecte-se Conosco</h2>
+                        <h2 class="glow-text">Atendimento Exclusivo</h2>
                     </div>
-                    <p>Acesse nossas redes sociais e canais de atendimento:</p>
+                    <p>Fale diretamente conosco e tire suas dúvidas:</p>
                     <div class="social-buttons">
                         <a href="https://facebook.com" target="_blank" class="social-btn facebook glow-button">
                             <i class="fab fa-facebook-f"></i> Facebook
@@ -43,12 +43,29 @@
                         <a href="https://instagram.com" target="_blank" class="social-btn instagram glow-button">
                             <i class="fab fa-instagram"></i> Instagram
                         </a>
-                        <a href="https://wa.me/5534997129462?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20atendimento." target="_blank" class="social-btn whatsapp glow-button">
+                        <a href="https://wa.me/5534997129462?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cosméticos." target="_blank" class="social-btn whatsapp glow-button">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
                     </div>
                 </div>
             </section>
+        </section>
+
+        <section id="sec-categorias" class="pagina-secao">
+            <div class="form-section">
+                <div class="container">
+                    <div class="section-title-box">
+                        <h2 class="glow-text">Categorias de Cosméticos</h2>
+                    </div>
+                    <p class="section-subtitle">Escolha uma categoria para explorar nossos produtos:</p>
+                    <div class="category-buttons">
+                        <button class="category-btn glow-button" onclick="alert('Filtrando por Skincare / Cuidados')">Skincare</button>
+                        <button class="category-btn glow-button" onclick="alert('Filtrando por Maquiagem')">Maquiagem</button>
+                        <button class="category-btn glow-button" onclick="alert('Filtrando por Perfumaria')">Perfumaria</button>
+                        <button class="category-btn glow-button" onclick="alert('Filtrando por Cabelos')">Cabelos</button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="sec-cadastro" class="pagina-secao">
