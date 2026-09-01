@@ -1,10 +1,10 @@
 :root {
-    --bg-color: #1a0f13;
-    --card-bg: rgba(35, 20, 26, 0.85);
-    --text-color: #fce4ec;
-    --primary-glow: #ff79a1;
-    --secondary-glow: #ffb3c6;
-    --border-color: #5c2c3e;
+    --bg-color: #1c1417;
+    --card-bg: #261b1f;
+    --text-color: #f3e5e8;
+    --primary-glow: #e892a7;
+    --secondary-glow: #d4af37;
+    --border-color: #422d35;
 }
 
 * {
@@ -17,7 +17,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1a0f13 0%, #2d141e 50%, #1f0b12 100%);
+    background-color: var(--bg-color);
     color: var(--text-color);
     min-height: 100vh;
     display: flex;
@@ -45,7 +45,6 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
 }
 
 .header-container {
@@ -114,7 +113,7 @@ main {
 .hero-section {
     text-align: center;
     padding: 80px 0;
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(45, 20, 30, 0.8) 100%);
+    background: linear-gradient(135deg, #261b1f 0%, #352229 100%);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -126,7 +125,7 @@ main {
 .hero-section p {
     font-size: 1.1rem;
     margin-bottom: 30px;
-    color: #f0d5dd;
+    color: #d1b8bc;
 }
 
 .glow-button {
@@ -144,7 +143,7 @@ main {
 
 .glow-button:hover {
     background-color: var(--primary-glow);
-    color: #1a0f13;
+    color: #1c1417;
     box-shadow: 0 0 15px var(--primary-glow);
 }
 
@@ -175,7 +174,6 @@ main {
 
 .form-section {
     padding: 40px 0;
-    backdrop-filter: blur(10px);
 }
 
 .form-section.alt-bg {
@@ -183,7 +181,7 @@ main {
 }
 
 .section-subtitle {
-    color: #f0d5dd;
+    color: #d1b8bc;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -199,11 +197,10 @@ main {
     flex-direction: column;
     gap: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
 }
 
 .card-form input {
-    background-color: #121212;
+    background-color: #1c1417;
     border: 1px solid var(--border-color);
     padding: 12px;
     color: #fff;
@@ -237,7 +234,6 @@ main {
     flex-direction: column;
     justify-content: space-between;
     gap: 15px;
-    backdrop-filter: blur(10px);
 }
 
 .product-card img {
@@ -271,7 +267,6 @@ main {
     padding: 30px;
     border-radius: 8px;
     margin-top: 20px;
-    backdrop-filter: blur(10px);
 }
 
 .site-footer {
@@ -280,13 +275,12 @@ main {
     text-align: center;
     padding: 20px 0;
     font-size: 0.9rem;
-    color: #f0d5dd;
-    backdrop-filter: blur(10px);
+    color: #d1b8bc;
     position: relative;
     z-index: 2;
 }
 
-/* Aperfeiçoamento dos Cosméticos Flutuantes de Fundo */
+/* Cosméticos Flutuantes de Fundo Perfeitos */
 .floating-cosmetics-container {
     position: fixed;
     top: 0;
@@ -301,54 +295,49 @@ main {
 .floating-item {
     position: absolute;
     color: var(--primary-glow);
-    font-size: 1.8rem;
-    opacity: 0.35;
+    font-size: 1.6rem;
+    opacity: 0.3;
     animation: floatUpSmooth linear infinite;
-    text-shadow: 0 0 15px var(--primary-glow), 0 0 5px var(--secondary-glow);
-    filter: drop-shadow(0 0 8px rgba(255, 121, 161, 0.4));
+    text-shadow: 0 0 12px var(--primary-glow);
 }
 
 .floating-item.lipstick {
     left: 12%;
-    animation-duration: 14s;
+    animation-duration: 12s;
     animation-delay: 0s;
-    font-size: 1.6rem;
 }
 
 .floating-item.cream {
-    left: 32%;
-    animation-duration: 18s;
+    left: 35%;
+    animation-duration: 16s;
     animation-delay: 2s;
-    font-size: 2rem;
 }
 
 .floating-item.perfume {
-    left: 58%;
-    animation-duration: 15s;
-    animation-delay: 4s;
-    font-size: 1.7rem;
+    left: 65%;
+    animation-duration: 13s;
+    animation-delay: 1s;
 }
 
 .floating-item.sparkle {
-    left: 82%;
-    animation-duration: 16s;
-    animation-delay: 1s;
-    font-size: 1.5rem;
+    left: 85%;
+    animation-duration: 15s;
+    animation-delay: 4s;
 }
 
 @keyframes floatUpSmooth {
     0% {
-        transform: translateY(110vh) rotate(-15deg) scale(0.9);
+        transform: translateY(105vh) rotate(0deg) scale(0.9);
         opacity: 0;
     }
-    15% {
-        opacity: 0.4;
+    20% {
+        opacity: 0.35;
     }
-    85% {
-        opacity: 0.4;
+    80% {
+        opacity: 0.35;
     }
     100% {
-        transform: translateY(-15vh) rotate(25deg) scale(1.1);
+        transform: translateY(-10vh) rotate(360deg) scale(1.1);
         opacity: 0;
     }
 }
