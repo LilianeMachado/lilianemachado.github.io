@@ -1,6 +1,6 @@
 :root {
     --bg-color: #1c1417;
-    --card-bg: #261b1f;
+    --card-bg: rgba(38, 27, 31, 0.9); /* Fundo dos cards levemente translúcido para destacar sobre a imagem */
     --text-color: #f3e5e8;
     --primary-glow: #e892a7;
     --secondary-glow: #d4af37;
@@ -17,7 +17,11 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    /* Imagem de fundo aplicada cobrindo todo o site, com um filtro escuro translúcido por cima para legibilidade */
+    background: linear-gradient(rgba(28, 20, 23, 0.85), rgba(28, 20, 23, 0.85)), url('fundo-cosmeticos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--text-color);
     min-height: 100vh;
     display: flex;
@@ -45,6 +49,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(8px);
 }
 
 .header-container {
@@ -113,8 +118,9 @@ main {
 .hero-section {
     text-align: center;
     padding: 80px 0;
-    background: linear-gradient(135deg, #261b1f 0%, #352229 100%);
+    background: rgba(38, 27, 31, 0.7);
     border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(5px);
 }
 
 .hero-section h2 {
@@ -197,6 +203,7 @@ main {
     flex-direction: column;
     gap: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
 }
 
 .card-form input {
@@ -234,6 +241,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     gap: 15px;
+    backdrop-filter: blur(8px);
 }
 
 .product-card img {
@@ -267,6 +275,7 @@ main {
     padding: 30px;
     border-radius: 8px;
     margin-top: 20px;
+    backdrop-filter: blur(8px);
 }
 
 .site-footer {
@@ -278,6 +287,7 @@ main {
     color: #d1b8bc;
     position: relative;
     z-index: 2;
+    backdrop-filter: blur(8px);
 }
 
 /* Cosméticos Flutuantes de Fundo Perfeitos */
@@ -296,7 +306,7 @@ main {
     position: absolute;
     color: var(--primary-glow);
     font-size: 1.6rem;
-    opacity: 0.3;
+    opacity: 0.35;
     animation: floatUpSmooth linear infinite;
     text-shadow: 0 0 12px var(--primary-glow);
 }
@@ -331,10 +341,10 @@ main {
         opacity: 0;
     }
     20% {
-        opacity: 0.35;
+        opacity: 0.4;
     }
     80% {
-        opacity: 0.35;
+        opacity: 0.4;
     }
     100% {
         transform: translateY(-10vh) rotate(360deg) scale(1.1);
