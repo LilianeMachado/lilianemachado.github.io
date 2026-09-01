@@ -17,13 +17,21 @@ body {
     margin: 0 auto;
 }
 
-/* Efeito de luz (Glow) nas fontes */
+/* Oculta as seções por padrão, exibindo apenas a ativa */
+.pagina-secao {
+    display: none;
+}
+
+.pagina-secao.ativa {
+    display: block;
+}
+
+/* Efeito de luz (Glow) */
 .glow-text {
     color: #ffffff;
     text-shadow: 0 0 10px rgba(0, 195, 255, 0.8), 0 0 20px rgba(0, 195, 255, 0.5);
 }
 
-/* Efeito de luz nos botões */
 .glow-button {
     box-shadow: 0 0 15px rgba(0, 195, 255, 0.4);
     transition: all 0.3s ease;
@@ -54,7 +62,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* Cada opção de navegação dentro de um botão isolado e espaçado */
 .nav-btn {
     background-color: #1f233a;
     color: #ffffff;
@@ -63,6 +70,7 @@ body {
     border-radius: 8px;
     font-weight: 600;
     border: 1px solid rgba(0, 195, 255, 0.3);
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
@@ -100,12 +108,12 @@ body {
     font-weight: bold;
 }
 
-/* Espaçamento grande para separar bem os blocos */
 .form-section {
     padding: 90px 0;
     text-align: center;
     background-color: #121522;
-    margin: 30px 0;
+    margin: 30px auto;
+    max-width: 900px;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -162,11 +170,9 @@ body {
 }
 
 .social-section {
-    padding: 90px 0;
+    padding: 60px 0;
     text-align: center;
-    background-color: #121522;
-    border-radius: 12px;
-    margin-bottom: 30px;
+    background-color: #0f111a;
 }
 
 .social-section p {
@@ -201,6 +207,7 @@ body {
     text-align: center;
     padding: 25px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
 }
 
 /* --- RESPONSIVIDADE --- */

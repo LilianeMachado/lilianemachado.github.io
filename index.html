@@ -12,66 +12,72 @@
         <div class="container header-container">
             <h1 id="tituloNome" class="glow-text">liliane machado</h1>
             <nav class="site-nav">
-                <a href="#inicio" class="nav-btn">Início</a>
-                <a href="#cadastro" class="nav-btn">Cadastro</a>
-                <a href="#login" class="nav-btn">Login</a>
-                <a href="#redes" class="nav-btn">Redes Sociais</a>
+                <a href="#inicio" class="nav-btn" onclick="mostrarSecao('inicio')">Início</a>
+                <a href="#cadastro" class="nav-btn" onclick="mostrarSecao('cadastro')">Cadastro</a>
+                <a href="#login" class="nav-btn" onclick="mostrarSecao('login')">Login</a>
+                <a href="#redes" class="nav-btn" onclick="mostrarSecao('redes')">Redes Sociais</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="inicio" class="hero-section">
-            <div class="container">
-                <h2 class="glow-text">Soluções Digitais Profissionais</h2>
-                <p>Criando experiências modernas, rápidas e funcionais para a web.</p>
-                <button id="meuBotao" class="glow-button">Fale Comigo</button>
+        <section id="sec-inicio" class="pagina-secao ativa">
+            <div class="hero-section">
+                <div class="container">
+                    <h2 class="glow-text">Soluções Digitais Profissionais</h2>
+                    <p>Criando experiências modernas, rápidas e funcionais para a web.</p>
+                    <button id="meuBotao" class="glow-button" onclick="mostrarSecao('redes')">Fale Comigo</button>
+                </div>
+            </div>
+
+            <section class="social-section">
+                <div class="container">
+                    <div class="section-title-box">
+                        <h2 class="glow-text">Conecte-se Conosco</h2>
+                    </div>
+                    <p>Acesse nossas redes sociais e canais de atendimento:</p>
+                    <div class="social-buttons">
+                        <a href="https://facebook.com" target="_blank" class="social-btn facebook glow-button">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-btn instagram glow-button">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="https://wa.me/5534997129462?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20atendimento." target="_blank" class="social-btn whatsapp glow-button">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="sec-cadastro" class="pagina-secao">
+            <div class="form-section">
+                <div class="container">
+                    <div class="section-title-box">
+                        <h2 class="glow-text">Faça seu Cadastro</h2>
+                    </div>
+                    <form id="formCadastro" class="card-form">
+                        <input type="text" placeholder="Seu Nome Completo" required>
+                        <input type="email" placeholder="Seu E-mail" required>
+                        <input type="password" placeholder="Crie uma Senha" required>
+                        <button type="submit" class="btn-submit glow-button">Cadastrar</button>
+                    </form>
+                </div>
             </div>
         </section>
 
-        <section id="cadastro" class="form-section">
-            <div class="container">
-                <div class="section-title-box">
-                    <h2 class="glow-text">Faça seu Cadastro</h2>
-                </div>
-                <form id="formCadastro" class="card-form">
-                    <input type="text" placeholder="Seu Nome Completo" required>
-                    <input type="email" placeholder="Seu E-mail" required>
-                    <input type="password" placeholder="Crie uma Senha" required>
-                    <button type="submit" class="btn-submit glow-button">Cadastrar</button>
-                </form>
-            </div>
-        </section>
-
-        <section id="login" class="form-section alt-bg">
-            <div class="container">
-                <div class="section-title-box">
-                    <h2 class="glow-text">Área de Login</h2>
-                </div>
-                <form id="formLogin" class="card-form">
-                    <input type="email" placeholder="Seu E-mail" required>
-                    <input type="password" placeholder="Sua Senha" required>
-                    <button type="submit" class="btn-submit glow-button">Entrar</button>
-                </form>
-            </div>
-        </section>
-
-        <section id="redes" class="social-section">
-            <div class="container">
-                <div class="section-title-box">
-                    <h2 class="glow-text">Conecte-se Conosco</h2>
-                </div>
-                <p>Acesse nossas redes sociais e canais de atendimento:</p>
-                <div class="social-buttons">
-                    <a href="https://facebook.com" target="_blank" class="social-btn facebook glow-button">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                    <a href="https://instagram.com" target="_blank" class="social-btn instagram glow-button">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
-                    <a href="https://wa.me/5534997129462?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20atendimento." target="_blank" class="social-btn whatsapp glow-button">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
+        <section id="sec-login" class="pagina-secao">
+            <div class="form-section alt-bg">
+                <div class="container">
+                    <div class="section-title-box">
+                        <h2 class="glow-text">Área de Login</h2>
+                    </div>
+                    <form id="formLogin" class="card-form">
+                        <input type="email" placeholder="Seu E-mail" required>
+                        <input type="password" placeholder="Sua Senha" required>
+                        <button type="submit" class="btn-submit glow-button">Entrar</button>
+                    </form>
                 </div>
             </div>
         </section>
