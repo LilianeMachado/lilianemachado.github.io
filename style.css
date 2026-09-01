@@ -290,37 +290,65 @@ main {
     backdrop-filter: blur(8px);
 }
 
-/* Cosméticos Flutuantes de Fundo Perfeitos */
-/* Customização de cores individuais para os cosméticos flutuantes */
+
+}/* Configuração base dos ícones flutuantes */
+.floating-item {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    animation: subirEfeito linear infinite;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+/* Posições e cores individuais */
 .floating-item.lipstick {
-    left: 12%;
-    color: #ff4d6d; /* Tom vibrante de batom */
+    left: 15%;
+    color: #ff4d6d;
     text-shadow: 0 0 15px #ff4d6d, 0 0 5px #ff758f;
     animation-duration: 12s;
     animation-delay: 0s;
 }
 
 .floating-item.cream {
-    left: 35%;
-    color: #ffd166; /* Tom suave e cremoso sofisticado */
+    left: 40%;
+    color: #ffd166;
     text-shadow: 0 0 15px #ffd166, 0 0 5px #ffe8a3;
-    animation-duration: 16s;
+    animation-duration: 15s;
     animation-delay: 2s;
 }
 
 .floating-item.perfume {
-    left: 65%;
-    color: #c77dff; /* Tom elegante de frasco de perfume */
+    left: 70%;
+    color: #c77dff;
     text-shadow: 0 0 15px #c77dff, 0 0 5px #e0aaff;
     animation-duration: 13s;
     animation-delay: 1s;
 }
 
 .floating-item.sparkle {
-    left: 85%;
-    color: #ffb703; /* Brilho dourado refinado */
+    left: 88%;
+    color: #ffb703;
     text-shadow: 0 0 15px #ffb703, 0 0 5px #ffd166;
-    animation-duration: 15s;
-    animation-delay: 4s;
+    animation-duration: 14s;
+    animation-delay: 3s;
+}
+
+/* Animação de subida */
+@keyframes subirEfeito {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-105vh);
+        opacity: 0;
+    }
 }
 }
