@@ -108,7 +108,7 @@ function fazerLoginAdmin() {
             tentativasErradas = 0;
             alert("Senha incorreta inserida 3 vezes! Por segurança, o painel está bloqueado por 5 minutos.");
         } else {
-            alert(`Senha incorreta! Você tem mais ${tentativasRestantes} tentativa(s) antes do bloqueio temporal.`);
+            alert(`Senha incorreta! Você tem mais ${tentantesRestantes || tentativasRestantes} tentativa(s) antes do bloqueio temporal.`);
         }
     }
 }
