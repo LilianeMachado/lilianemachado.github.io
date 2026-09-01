@@ -9,13 +9,13 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="container">
-            <h1 id="tituloNome">liliane machado</h1>
+        <div class="container header-container">
+            <h1 id="tituloNome" class="glow-text">liliane machado</h1>
             <nav class="site-nav">
-                <a href="#inicio">Início</a>
-                <a href="#cadastro">Cadastro</a>
-                <a href="#login">Login</a>
-                <a href="#redes">Redes Sociais</a>
+                <a href="#inicio" class="nav-btn">Início</a>
+                <a href="#cadastro" class="nav-btn">Cadastro</a>
+                <a href="#login" class="nav-btn">Login</a>
+                <a href="#redes" class="nav-btn">Redes Sociais</a>
             </nav>
         </div>
     </header>
@@ -23,47 +23,53 @@
     <main>
         <section id="inicio" class="hero-section">
             <div class="container">
-                <h2>Soluções Digitais Profissionais</h2>
+                <h2 class="glow-text">Soluções Digitais Profissionais</h2>
                 <p>Criando experiências modernas, rápidas e funcionais para a web.</p>
-                <button id="meuBotao">Fale Comigo</button>
+                <button id="meuBotao" class="glow-button">Fale Comigo</button>
             </div>
         </section>
 
         <section id="cadastro" class="form-section">
             <div class="container">
-                <h2>Faça seu Cadastro</h2>
+                <div class="section-title-box">
+                    <h2 class="glow-text">Faça seu Cadastro</h2>
+                </div>
                 <form id="formCadastro" class="card-form">
                     <input type="text" placeholder="Seu Nome Completo" required>
                     <input type="email" placeholder="Seu E-mail" required>
                     <input type="password" placeholder="Crie uma Senha" required>
-                    <button type="submit" class="btn-submit">Cadastrar</button>
+                    <button type="submit" class="btn-submit glow-button">Cadastrar</button>
                 </form>
             </div>
         </section>
 
         <section id="login" class="form-section alt-bg">
             <div class="container">
-                <h2>Área de Login</h2>
+                <div class="section-title-box">
+                    <h2 class="glow-text">Área de Login</h2>
+                </div>
                 <form id="formLogin" class="card-form">
                     <input type="email" placeholder="Seu E-mail" required>
                     <input type="password" placeholder="Sua Senha" required>
-                    <button type="submit" class="btn-submit">Entrar</button>
+                    <button type="submit" class="btn-submit glow-button">Entrar</button>
                 </form>
             </div>
         </section>
 
         <section id="redes" class="social-section">
             <div class="container">
-                <h2>Conecte-se Conosco</h2>
+                <div class="section-title-box">
+                    <h2 class="glow-text">Conecte-se Conosco</h2>
+                </div>
                 <p>Acesse nossas redes sociais e canais de atendimento:</p>
                 <div class="social-buttons">
-                    <a href="https://facebook.com" target="_blank" class="social-btn facebook">
+                    <a href="https://facebook.com" target="_blank" class="social-btn facebook glow-button">
                         <i class="fab fa-facebook-f"></i> Facebook
                     </a>
-                    <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+                    <a href="https://instagram.com" target="_blank" class="social-btn instagram glow-button">
                         <i class="fab fa-instagram"></i> Instagram
                     </a>
-                    <a href="https://whatsapp.com" target="_blank" class="social-btn whatsapp">
+                    <a href="https://whatsapp.com" target="_blank" class="social-btn whatsapp glow-button">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>

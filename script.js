@@ -1,4 +1,3 @@
-// Formata o título automaticamente com iniciais maiúsculas
 function formatarNome(nome) {
     if (!nome) return "";
     return nome.split(' ').map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase()).join(' ');
@@ -9,9 +8,8 @@ if (elementoTitulo) {
     elementoTitulo.textContent = formatarNome(elementoTitulo.textContent);
 }
 
-// Interatividade dos botões principais e formulários
 document.getElementById("meuBotao").addEventListener("click", () => {
-    alert("Bem-vinda ao seu site completo com Cadastro, Login e Redes Sociais!");
+    alert("Bem-vinda ao seu site com visual moderno e iluminado!");
 });
 
 document.getElementById("formCadastro").addEventListener("submit", (e) => {
