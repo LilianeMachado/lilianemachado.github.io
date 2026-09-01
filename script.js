@@ -155,4 +155,26 @@ document.getElementById("formAddProduto").addEventListener("submit", (e) => {
     alert(`Produto cadastrado e direcionado automaticamente para a categoria: ${categoriaDetectada.toUpperCase()}!`);
     document.getElementById("formAddProduto").reset();
     mostrarSecao('produtos');
+});// Função para gerar o link do WhatsApp com a mensagem do produto
+function abrirWhatsAppProduto(nomeProduto) {
+    const numeroWhatsApp = "5534997129462";
+    const mensagem = encodeURIComponent(`Olá, Liliane Machado! Tenho interesse no produto: *${nomeProduto}*. Poderia me passar mais informações?`);
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+    window.open(urlWhatsApp, '_blank');
+}
+
+// Atualização dinâmica dos botões de compra nos cards de produtos
+document.addEventListener("DOMContentLoaded", () => {
+    const botoesComprar = document.querySelectorAll(".product-card button, .btn-comprar");
+    
+    botoesComprar.demorados = true; // apenas garantia de execução
+    botoesComprar.forEach(botao => {
+        botao.addEventListener("click", (e) => {
+            const card = e.target.closest(".product-card");
+            if (card) {
+                const nomeProduto = card.querySelector("h3, h4, .product-title")?.innerText || "Cosmético Luxo";
+                abrirWhatsAppProduto(nomeProduto);
+            }
+        });
+    });
 });
