@@ -4,11 +4,40 @@
     box-sizing: border-box;
 }
 
+/* Animação do Arco-Íris Luminoso Global */
+@keyframes arcoIrisGlow {
+    0% {
+        color: #ff595e;
+        text-shadow: 0 0 12px rgba(255, 89, 94, 0.8), 0 0 25px rgba(255, 89, 94, 0.4);
+    }
+    20% {
+        color: #ffca3a;
+        text-shadow: 0 0 12px rgba(255, 202, 58, 0.8), 0 0 25px rgba(255, 202, 58, 0.4);
+    }
+    40% {
+        color: #8ac926;
+        text-shadow: 0 0 12px rgba(138, 201, 38, 0.8), 0 0 25px rgba(138, 201, 38, 0.4);
+    }
+    60% {
+        color: #1982c4;
+        text-shadow: 0 0 12px rgba(25, 130, 196, 0.8), 0 0 25px rgba(25, 130, 196, 0.4);
+    }
+    80% {
+        color: #6a4c93;
+        text-shadow: 0 0 12px rgba(106, 76, 147, 0.8), 0 0 25px rgba(106, 76, 147, 0.4);
+    }
+    100% {
+        color: #ff595e;
+        text-shadow: 0 0 12px rgba(255, 89, 94, 0.8), 0 0 25px rgba(255, 89, 94, 0.4);
+    }
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #1a1415;
     color: #f7f1f2;
     line-height: 1.6;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .container {
@@ -26,8 +55,7 @@ body {
 }
 
 .glow-text {
-    color: #ffffff;
-    text-shadow: 0 0 12px rgba(226, 135, 154, 0.8), 0 0 25px rgba(226, 135, 154, 0.4);
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .glow-button {
@@ -70,6 +98,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .nav-btn:hover {
@@ -92,12 +121,14 @@ body {
 .hero-section h2 {
     font-size: 2.8rem;
     margin-bottom: 20px;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .hero-section p {
     font-size: 1.2rem;
     margin-bottom: 30px;
     color: #e6d2d5;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .btn-cta {
@@ -109,6 +140,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .form-section {
@@ -131,11 +163,13 @@ body {
 
 .section-title-box h2 {
     font-size: 2rem;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .section-subtitle {
     color: #d1b8bc;
     margin-bottom: 40px;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .product-grid {
@@ -169,18 +203,21 @@ body {
     font-size: 1.2rem;
     margin-bottom: 8px;
     color: #ffffff;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .product-card p {
     font-size: 0.9rem;
     color: #d1b8bc;
     margin-bottom: 12px;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .product-card .price {
     font-size: 1.1rem;
     font-weight: bold;
     color: #e2879a;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .category-buttons {
@@ -202,6 +239,7 @@ body {
     cursor: pointer;
     font-weight: bold;
     flex: 1 1 180px;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .category-btn:hover {
@@ -229,6 +267,7 @@ body {
     border-radius: 8px;
     font-size: 1rem;
     color: #ffffff;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .card-form input:focus {
@@ -246,6 +285,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .social-section {
@@ -257,6 +297,7 @@ body {
 .social-section p {
     color: #d1b8bc;
     margin-bottom: 25px;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .social-buttons {
@@ -275,6 +316,7 @@ body {
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 .facebook { background-color: #1877f2; }
@@ -287,6 +329,10 @@ body {
     padding: 25px 0;
     border-top: 1px solid rgba(226, 135, 154, 0.1);
     margin-top: 40px;
+}
+
+.site-footer p {
+    animation: arcoIrisGlow 8s infinite linear;
 }
 
 @media (max-width: 768px) {

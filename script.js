@@ -20,12 +20,41 @@ function mostrarSecao(secaoId) {
     }
 }
 
-// Lista inicial de produtos de cosméticos
+// Lista inicial de produtos de cosméticos com suas categorias definidas
 let produtos = [
-    { nome: "Batom Matte Luxo", preco: "R$ 49,90", desc: "Alta fixação e cores vibrantes.", imagem: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=400&q=80" },
-    { nome: "Sérum Facial Vitamina C", preco: "R$ 89,90", desc: "Ilumina e revitaliza a pele.", imagem: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80" },
-    { nome: "Perfume Floral Essencial", preco: "R$ 149,90", desc: "Fragrância marcante e duradoura.", imagem: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=400&q=80" }
+    { nome: "Batom Matte Luxo", preco: "R$ 49,90", desc: "Alta fixação e cores vibrantes.", imagem: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=400&q=80", categoria: "maquiagem" },
+    { nome: "Sérum Facial Vitamina C", preco: "R$ 89,90", desc: "Ilumina e revitaliza a pele.", imagem: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80", categoria: "skincare" },
+    { nome: "Perfume Floral Essencial", preco: "R$ 149,90", desc: "Fragrância marcante e duradoura.", imagem: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=400&q=80", categoria: "perfumaria" }
 ];
+
+// Função para filtrar produtos por categoria ao clicar nos botões
+function filtrarCategoria(categoriaDesejada) {
+    const grid = document.getElementById("productGrid");
+    if (!grid) return;
+    grid.innerHTML = "";
+
+    const filtrados = produtos.filter(p => p.categoria === categoriaDesejada);
+
+    if (filtrados.length === 0) {
+        grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #d1b8bc;">Nenhum produto encontrado nesta categoria no momento.</p>`;
+        mostrarSecao('produtos');
+        return;
+    }
+
+    filtrados.forEach((prod) => {
+        grid.innerHTML += `
+            <div class="product-card glow-button">
+                <img src="${prod.imagem}" alt="${prod.nome}">
+                <div>
+                    <h3>${prod.nome}</h3>
+                    <p>${prod.desc}</p>
+                </div>
+                <span class="price">${prod.preco}</span>
+            </div>
+        `;
+    });
+    mostrarSecao('produtos');
+}
 
 function renderizarProdutos() {
     const grid = document.getElementById("productGrid");
@@ -46,20 +75,41 @@ function renderizarProdutos() {
     });
 }
 
-// Executa ao carregar o site
 renderizarProdutos();
 
-// Senha de Administrador (Você pode alterar aqui se quiser)
-const SENHA_ADMIN = "lilianeadmin";
+// --- SISTEMA DE SEGURANÇA E BLOQUEIO DE ADMIN ---
+const SENHA_ADMIN = "Liliane@Cosmeticos#2026!$";
+let tentativasErradas = 0;
+let tempoBloqueioFim = 0;
 
 function fazerLoginAdmin() {
+    const agora = new Date().getTime();
+
+    if (agora < tempoBloqueioFim) {
+        const segundosRestantes = Math.ceil((tempoBloqueioFim - agora) / 1000);
+        const minutosRestantes = Math.ceil(segundosRestantes / 60);
+        alert(`Acesso temporariamente bloqueado por segurança devido a excesso de tentativas. Tente novamente em ${minutosRestantes} minuto(s).`);
+        return;
+    }
+
     const senhaDigitada = document.getElementById("adminPasswordInput").value;
+
     if (senhaDigitada === SENHA_ADMIN) {
+        tentativasErradas = 0;
         document.getElementById("adminLoginBox").style.display = "none";
         document.getElementById("adminPanelBox").style.display = "block";
         alert("Acesso autorizado ao painel de controle!");
     } else {
-        alert("Senha incorreta! Apenas o administrador pode acessar.");
+        tentativasErradas++;
+        const tentativasRestantes = 3 - tentativasErradas;
+
+        if (tentativasErradas >= 3) {
+            tempoBloqueioFim = new Date().getTime() + 5 * 60 * 1000;
+            tentativasErradas = 0;
+            alert("Senha incorreta inserida 3 vezes! Por segurança, o painel está bloqueado por 5 minutos.");
+        } else {
+            alert(`Senha incorreta! Você tem mais ${tentativasRestantes} tentativa(s) antes do bloqueio temporal.`);
+        }
     }
 }
 
@@ -69,7 +119,21 @@ function sairAdmin() {
     document.getElementById("adminPasswordInput").value = "";
 }
 
-// Adicionar ou atualizar produto pelo painel
+// Inteligência de reconhecimento automático de categoria baseada no nome digitado
+function detectarCategoria(nomeProduto) {
+    const nome = nomeProduto.toLowerCase();
+    if (nome.includes("batom") || nome.includes("maquiagem") || nome.includes("sombra") || nome.includes("base") || nome.includes("pó") || nome.includes("rímel")) {
+        return "maquiagem";
+    } else if (nome.includes("perfume") || nome.includes("colônia") || nome.includes("fragrância")) {
+        return "perfumaria";
+    } else if (nome.includes("cabelo") || nome.includes("shampoo") || nome.includes("máscara") || nome.includes("condicionador")) {
+        return "cabelos";
+    } else {
+        return "skincare";
+    }
+}
+
+// Adicionar ou atualizar produto pelo painel com reconhecimento automático de categoria e imagem
 document.getElementById("formAddProduto").addEventListener("submit", (e) => {
     e.preventDefault();
     const nome = document.getElementById("novoNomeProd").value;
@@ -83,10 +147,12 @@ document.getElementById("formAddProduto").addEventListener("submit", (e) => {
         imagemUrl = URL.createObjectURL(inputFoto.files[0]);
     }
 
-    produtos.push({ nome, preco, desc, imagem: imagemUrl });
+    const categoriaDetectada = detectarCategoria(nome);
+
+    produtos.push({ nome, preco, desc, imagem: imagemUrl, categoria: categoriaDetectada });
     renderizarProdutos();
 
-    alert("Produto adicionado com sucesso ao catálogo!");
+    alert(`Produto cadastrado e direcionado automaticamente para a categoria: ${categoriaDetectada.toUpperCase()}!`);
     document.getElementById("formAddProduto").reset();
     mostrarSecao('produtos');
 });
