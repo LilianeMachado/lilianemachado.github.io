@@ -28,6 +28,4 @@ document.getElementById("formCadastro").addEventListener("submit", (e) => {
 document.getElementById("formLogin").addEventListener("submit", (e) => {
     e.preventDefault();
     alert("Login realizado com sucesso!");
-});git add .
-git commit -m "design modernizado com botoes separados e efeitos de luz nas fontes"
-git push origin main
+});

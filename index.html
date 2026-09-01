@@ -10,9 +10,10 @@
 <body>
     <header class="site-header">
         <div class="container header-container">
-            <h1 id="tituloNome" class="glow-text">Liliane machado</h1>
+            <h1 id="tituloNome" class="glow-text">liliane machado</h1>
             <nav class="site-nav">
                 <button class="nav-btn" onclick="mostrarSecao('inicio')">Início</button>
+                <button class="nav-btn" onclick="mostrarSecao('produtos')">Ver Produtos</button>
                 <button class="nav-btn" onclick="mostrarSecao('categorias')">Categorias</button>
                 <button class="nav-btn" onclick="mostrarSecao('cadastro')">Cadastro</button>
                 <button class="nav-btn" onclick="mostrarSecao('login')">Login</button>
@@ -26,7 +27,7 @@
                 <div class="container">
                     <h2 class="glow-text">Beleza e Cuidado em Cada Detalhe</h2>
                     <p>Descubra os melhores cosméticos para realçar a sua essência natural.</p>
-                    <button class="glow-button btn-cta" onclick="mostrarSecao('categorias')">Ver Produtos</button>
+                    <button class="glow-button btn-cta" onclick="mostrarSecao('produtos')">Ver Todos os Produtos</button>
                 </div>
             </div>
 
@@ -51,18 +52,55 @@
             </section>
         </section>
 
+        <section id="sec-produtos" class="pagina-secao">
+            <div class="form-section catalog-section">
+                <div class="container">
+                    <div class="section-title-box">
+                        <h2 class="glow-text">Catálogo de Produtos</h2>
+                    </div>
+                    <p class="section-subtitle">Confira nossa seleção exclusiva de alta qualidade:</p>
+                    <div class="product-grid">
+                        <div class="product-card glow-button">
+                            <h3>Batom Matte Luxo</h3>
+                            <p>Alta fixação e cores vibrantes.</p>
+                            <span class="price">R$ 49,90</span>
+                        </div>
+                        <div class="product-card glow-button">
+                            <h3>Sérum Facial Vitamina C</h3>
+                            <p>Ilumina e revitaliza a pele.</p>
+                            <span class="price">R$ 89,90</span>
+                        </div>
+                        <div class="product-card glow-button">
+                            <h3>Perfume Floral Essencial</h3>
+                            <p>Fragrância marcante e duradoura.</p>
+                            <span class="price">R$ 149,90</span>
+                        </div>
+                        <div class="product-card glow-button">
+                            <h3>Máscara Capilar Hidratação Profunda</h3>
+                            <p>Recuperação imediata dos fios.</p>
+                            <span class="price">R$ 65,90</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="sec-categorias" class="pagina-secao">
             <div class="form-section">
                 <div class="container">
                     <div class="section-title-box">
                         <h2 class="glow-text">Categorias de Cosméticos</h2>
                     </div>
-                    <p class="section-subtitle">Escolha uma categoria para explorar nossos produtos:</p>
+                    <p class="section-subtitle">Explore por tipo de produto desejado:</p>
                     <div class="category-buttons">
-                        <button class="category-btn glow-button" onclick="alert('Filtrando por Skincare / Cuidados')">Skincare</button>
-                        <button class="category-btn glow-button" onclick="alert('Filtrando por Maquiagem')">Maquiagem</button>
-                        <button class="category-btn glow-button" onclick="alert('Filtrando por Perfumaria')">Perfumaria</button>
-                        <button class="category-btn glow-button" onclick="alert('Filtrando por Cabelos')">Cabelos</button>
+                        <button class="category-btn glow-button" onclick="alert('Explorando: Skincare & Cuidados com a Pele')">Skincare</button>
+                        <button class="category-btn glow-button" onclick="alert('Explorando: Maquiagens')">Maquiagem</button>
+                        <button class="category-btn glow-button" onclick="alert('Explorando: Perfumaria')">Perfumaria</button>
+                        <button class="category-btn glow-button" onclick="alert('Explorando: Tratamentos para Cabelos')">Cabelos</button>
+                        <button class="category-btn glow-button" onclick="alert('Explorando: Hidratantes Corporais')">Corpo e Banho</button>
+                        <button class="category-btn glow-button" onclick="alert('Explorando: Unhas e Esmaltes')">Unhas</button>
+                        <button class="category-btn glow-button" onclick="alert('Explorando: Produtos Masculinos')">Linha Masculina</button>
+                        <button class="category-btn glow-button" onclick="alert('Explorando: Proteção Solar')">Protetor Solar</button>
                     </div>
                 </div>
             </div>
