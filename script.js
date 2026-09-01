@@ -177,4 +177,21 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+});// --- REDIRECIONAMENTO WHATSAPP DOS PRODUTOS ---
+document.addEventListener("DOMContentLoaded", () => {
+    const cardsProdutos = document.querySelectorAll(".product-card");
+    
+    cardsProdutos.forEach(card => {
+        const alvoClique = card.querySelector("button") || card;
+        
+        alvoClique.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const elementoTitulo = card.querySelector("h3, h4, .product-title, strong");
+            const nomeProduto = elementoTitulo ? elementoTitulo.innerText.trim() : "Cosmético Exclusivo";
+            
+            const numeroWhatsApp = "5534997129462";
+            const mensagem = encodeURIComponent(`Olá, Liliane Machado! Tenho interesse no produto: *${nomeProduto}*. Poderia me passar mais informações?`);
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagem}`, '_blank');
+        });
+    });
 });
